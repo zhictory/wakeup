@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.2
+    -->
+    <script>
+window.lsVersion = "1.3.2",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>ECMAScript 6 要点 | Hexo</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="ES6 被称为 ES2015 ，ES7 被称为 ES2016 。TC-39 小组将来所有的 ES 版本都会使用这个以年份为基础的命名系统。更频繁的发布意味着每个新的 ES 版本拥有的新特性会比 ES6 少得多。
+">
+
+<!-- Keywords -->
+<meta name="keywords" content>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/monokai.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hexo">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hexo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="ECMAScript 6 要点 | Hexo">
+<meta property="og:site_name" content="Hexo">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/04/08/2018-8-6-es6-key/">
+<meta property="og:image" content="http://yoursite.com/img/suka-favicon.ico">
+
+<meta property="og:description" content="ES6 被称为 ES2015 ，ES7 被称为 ES2016 。TC-39 小组将来所有的 ES 版本都会使用这个以年份为基础的命名系统。更频繁的发布意味着每个新的 ES 版本拥有的新特性会比 ES6 少得多。
+">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-04-08T07:19:04.318Z">
+    <meta property="article:modified_time" content="2019-04-08T07:19:04.318Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/04/08/2018-8-6-es6-key/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/04/08/2018-8-6-es6-key/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/04/08/2018-8-6-es6-key/"
+    },
+    "headline": "ECMAScript 6 要点 | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-04-08T07:19:04.318Z",
+    "dateModified": "2019-04-08T07:19:04.319Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "ES6 被称为 ES2015 ，ES7 被称为 ES2016 。TC-39 小组将来所有的 ES 版本都会使用这个以年份为基础的命名系统。更频繁的发布意味着每个新的 ES 版本拥有的新特性会比 ES6 少得多。
+"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about/" class="navbar-link">About</a>
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=ECMAScript 6 要点" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=ECMAScript 6 要点&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=ECMAScript 6 要点" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB4UlEQVR42u3aQZLDIAxEUd//0snWSUnqL9sLkJvN1CQz+LlKIBAcnwXbYZRRRhkVoI6iZd//dCR+p88xahYq6+TcWRmgwQtkf1N9btQsVBTgVWdR8IYPCvqLnmPUe1ARQCbWYJAYZVTVWZa0q8nWqPehVAIlk2g2cT6+SjBqeZQK4qd+PrqbMWpZFC4+/AXtnYT9WNXFqCVR0cNUq5Js1h/ZuBo1A6WSZ5aYKwTZNISDxahRqKpQVm0QSIBn/5cu8owagcoW/hU0C+TOi6LRZ9R2KLKRvBS4xUQZQo0ag6LFCnUI2QXh3YxRW6FIsiWHQ91BYtRcFCmYkkLrlU1GucgzalsUTawE1C2A4NFn1FYoFczqAgT5nFyaMGoWShVjaeGLBjY6MDJqaxQtrKpJky7uWtVho7ZD0eIE3lCCCTh9QaPGobpJmgY0vshj1BgUmRQ7RQ818aJbQUaNQKnLM3ST0DkAx5U8o7ZCXTnEppdt6EVoo+ag5OU9UfDvDoJyEWjUCFQnGOmBUicpGzUTpQJcTayq4E8u5Bg1D6UKr2SS7BbKjHovSiVScjCkCihGvQdFEisttsoEbtQoFClmqEOiMog7B9tGbY+ixdZ2EQxc5Lq1mzFqSdRKzSijjDLq1L4v8bAPKVmj2wAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">ECMAScript 6 要点</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-04-08</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=ECMAScript 6 要点&url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=ECMAScript 6 要点&url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/08/2018-8-6-es6-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/&title=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/04/08/2018-8-6-es6-key/&text=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB4UlEQVR42u3aQZLDIAxEUd//0snWSUnqL9sLkJvN1CQz+LlKIBAcnwXbYZRRRhkVoI6iZd//dCR+p88xahYq6+TcWRmgwQtkf1N9btQsVBTgVWdR8IYPCvqLnmPUe1ARQCbWYJAYZVTVWZa0q8nWqPehVAIlk2g2cT6+SjBqeZQK4qd+PrqbMWpZFC4+/AXtnYT9WNXFqCVR0cNUq5Js1h/ZuBo1A6WSZ5aYKwTZNISDxahRqKpQVm0QSIBn/5cu8owagcoW/hU0C+TOi6LRZ9R2KLKRvBS4xUQZQo0ag6LFCnUI2QXh3YxRW6FIsiWHQ91BYtRcFCmYkkLrlU1GucgzalsUTawE1C2A4NFn1FYoFczqAgT5nFyaMGoWShVjaeGLBjY6MDJqaxQtrKpJky7uWtVho7ZD0eIE3lCCCTh9QaPGobpJmgY0vshj1BgUmRQ7RQ818aJbQUaNQKnLM3ST0DkAx5U8o7ZCXTnEppdt6EVoo+ag5OU9UfDvDoJyEWjUCFQnGOmBUicpGzUTpQJcTayq4E8u5Bg1D6UKr2SS7BbKjHovSiVScjCkCihGvQdFEisttsoEbtQoFClmqEOiMog7B9tGbY+ixdZ2EQxc5Lq1mzFqSdRKzSijjDLq1L4v8bAPKVmj2wAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ES6（ES2015）"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6（ES2015）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ES2016"><span class="post-toc-number">2.</span> <span class="post-toc-text">ES2016</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <p>ES6 被称为 ES2015 ，ES7 被称为 ES2016 。TC-39 小组将来所有的 ES 版本都会使用这个以年份为基础的命名系统。更频繁的发布意味着每个新的 ES 版本拥有的新特性会比 ES6 少得多。</p>
+<h2 id="ES6（ES2015）"><a href="#ES6（ES2015）" class="headerlink" title="ES6（ES2015）"></a>ES6（ES2015）</h2><ol>
+<li><a href="https://mubu.com/doc/3c34Yt920U" target="_blank" rel="noopener">块级绑定</a>：块级声明也就是让所声明的变量在指定块的作用域外无法被访问。</li>
+<li><a href="https://mubu.com/doc/3P8c0NrFsU" target="_blank" rel="noopener">字符串与正则</a>：ES6 的创造者加强了字符串与正则表达式，为它们添加了新的能力，并补充了一些长期缺失的功能。</li>
+<li><a href="https://mubu.com/doc/3P3E-kFZKU" target="_blank" rel="noopener">增强的数组功能</a>： ES6 也添加了很多功能来继续强化数组，例如新的创建方法、几个有用的便捷方法，还增加了创建类型化数组（typed array）的能力。</li>
+<li><a href="https://mubu.com/doc/1SO6-GmBBU" target="_blank" rel="noopener">扩展的对象功能</a>：随着 JS 应用复杂度的增长，在 JS 程序中所使用的对象的平均数也在持续增长，因此更有效使用对象就变得更加必要。</li>
+<li><a href="https://mubu.com/doc/2ExlOG9xsU" target="_blank" rel="noopener">函数</a>：ES6 之前的版本经常需要用大量代码来实现非常基本的功能。ES6 在 ES5 函数基础上实现了不少增量改进，让 JS 更加强大，同时编程错误也更少。</li>
+<li><a href="https://mubu.com/doc/11vwg2GpsU" target="_blank" rel="noopener">解构赋值</a>：我们时常要定义对象与数组，然后有条不紊地从这些结构中提取出相关信息。为了简化提取信息的任务， ES6 新增了解构（ destructuring ），这是将一个数据结构分解为更小的部分的过程。</li>
+<li><a href="https://mubu.com/doc/3ErOLQGXBU" target="_blank" rel="noopener">Symbol</a>：在 Symbol 诞生之前，将字符串作为属性名称导致属性可以被轻易访问。而“私有名称”意味着开发者可以创建非字符串类型的属性名称，由此可以防止使用常规手段来探查这些名称。虽然 Symbol 类型的属性不是真正的私有属性，但它们难以被开发者无意修改，因此非常适用于需要提供一定层次保护的场合。</li>
+<li><a href="https://mubu.com/doc/2P9c1cW7aU" target="_blank" rel="noopener">Set 和 Map</a>：数组在 JS 中的使用正如其他语言的数组一样，但缺少更多类型的集合导致数组也经常被当作队列与栈来使用。数组只使用了数值型的索引，而若需要有非数值型的索引，开发者便会使用非数组的对象，用它们来定制实现 Set 与 Map，ES6 为 JS 添加了 Set 与 Map。</li>
+<li><a href="https://mubu.com/doc/I6GK9eZKU" target="_blank" rel="noopener">Promise 与异步编程</a>：随着越来越多的程序开始使用异步编程，事件与回调函数已不足以支持开发者的所有需求。Promise 是异步编程的另一种选择，它的工作方式类似于在其他语言中进行延迟并在将来执行作业。</li>
+<li><a href="https://mubu.com/doc/2c44YUofaU" target="_blank" rel="noopener">迭代器与生成器</a>：许多编程语言都将迭代数据的方式从使用 for 循环转变到使用迭代器对象， for 循环需要初始化变量以便追踪集合内的位置，而迭代器则以编程方式返回集合中的下一个项。</li>
+<li><a href="https://mubu.com/doc/1ge6gHSCUU" target="_blank" rel="noopener">类</a>：ES6 的类让 JS 中的继承变得更简单，起初是作为 ES5 传统继承模型的语法糖，但添加了许多特性来减少错误。</li>
+<li><a href="https://mubu.com/doc/2I0aGQKMLU" target="_blank" rel="noopener">代理和反射</a>：语言通过代理（ proxy ）暴露了在对象上的内部工作，代理是一种封装，能够拦截并改变 JS 引擎的底层操作。代理允许你为一些 JS 底层操作自行定义非常规行为，因此你就可以通过代理陷阱来复制 JS 内置对象的所有行为。</li>
+<li><a href="https://mubu.com/doc/1LCQ741FTU" target="_blank" rel="noopener">模块封装</a>：其他语言使用包（ package ）之类的概念来定义代码的作用域，然而在 ES6 之前，一个应用的每个 JS 文件所定义的所有内容都由全局作用域共享。当 web 应用变得更加复杂、需要使用越来越多的 JS 代码时，这种方式导致了诸多问题，例如命名冲突、安全问题等。 ES6 的设计目标之一就是要解决作用域问题，并让 JS 应用变得更有条理。</li>
+<li><a href="https://mubu.com/doc/3AoD1dZpGU" target="_blank" rel="noopener">处理整型</a>：JS 使用 IEEE 754 编码系统来表示整型与浮点型，多年以来这引发了很多混乱。 ES6 力图解决这方面的问题，让整型变得更易识别、更易处理，如识别整型、安全的整型。</li>
+<li><a href="https://mubu.com/doc/3AoD1dZpGU" target="_blank" rel="noopener">新的数学方法</a>：ES6 的游戏与图形的新重点引导它将类型化数组（ typed array ）引入了 JS ，同时也让它意识到 JS 引擎应当更有效率地进行许多数学计算。</li>
+<li><a href="https://mubu.com/doc/3AoD1dZpGU" target="_blank" rel="noopener">规范化 __proto__</a>：使用 Object.getPrototypeOf() 和 Object.setPrototypeOf() 代替 __proto__。</li>
+</ol>
+<h2 id="ES2016"><a href="#ES2016" class="headerlink" title="ES2016"></a>ES2016</h2><ol>
+<li><a href="https://mubu.com/doc/3E550IxFGU" target="_blank" rel="noopener">幂运算符</a>：虽然已经有 Math.pow() 方法可用于幂运算，然而 JS 也是在此方面只能调用方法而不能使用运算符的少数语言之一，并且一些开发者认为运算符可读性更强、更易于检查。</li>
+<li><a href="https://mubu.com/doc/3E550IxFGU" target="_blank" rel="noopener">Array.prototype.includes()</a>：此方法的规范未能赶上 ES6 的最后期限，于是最终它就进入了 ES2016 。</li>
+<li><a href="https://mubu.com/doc/3E550IxFGU" target="_blank" rel="noopener">函数作用域的严格模式</a>：ES6 仍然允许你使用 “use strict” 指令来指定严格模式，可以在全局作用域上，让所有代码运行在严格模式下；或用在函数作用域内，只有该函数会运行在严格模式下。后一种方式最终在 ES6 中成为了一个问题，这是由于参数可以用更加复杂的方式来定义，特别是在带有解构或默认值的情况下。</li>
+</ol>
+<p>参考：</p>
+<blockquote>
+<p><a href="https://sagittarius-rev.gitbooks.io/understanding-ecmascript-6-zh-ver/content/" target="_blank" rel="noopener">《Understanding ECMAScript 6》中文翻译</a></p>
+</blockquote>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-04-08");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-04-08T07:19:04.318Z" itemprop="datePublished">2019-04-08</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/04/08/hello-world/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Hello World</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/04/08/2018-8-6-app-download/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">App 下载提示</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Hexo</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.2 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

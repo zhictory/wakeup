@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.2
+    -->
+    <script>
+window.lsVersion = "1.3.2",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>《使用 webpack 定制前端开发环境》笔记 | Hexo</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="
+在线阅读：">
+
+<!-- Keywords -->
+<meta name="keywords" content>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/monokai.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hexo">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hexo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="《使用 webpack 定制前端开发环境》笔记 | Hexo">
+<meta property="og:site_name" content="Hexo">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/">
+<meta property="og:image" content="http://yoursite.com/img/suka-favicon.ico">
+
+<meta property="og:description" content="
+在线阅读：">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-04-08T07:19:04.314Z">
+    <meta property="article:modified_time" content="2019-04-08T07:19:04.314Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/"
+    },
+    "headline": "《使用 webpack 定制前端开发环境》笔记 | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-04-08T07:19:04.314Z",
+    "dateModified": "2019-04-08T07:19:04.314Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "
+在线阅读："
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about/" class="navbar-link">About</a>
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=《使用 webpack 定制前端开发环境》笔记" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=《使用 webpack 定制前端开发环境》笔记&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=《使用 webpack 定制前端开发环境》笔记" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB2UlEQVR42u3awY6DMAyEYd7/pbenlWiVzIwplRLzc9lVofAd3Di2Of4WPA5QoECBGqAOcfyfH117/uztxh/n0+eA6oUaBp24cfr5+T7Jc0D1Qs0C/PO8+s7oOvcdUM9DzR6uAl0tsqBAJf+rYAf1XFSSSGcPShL6rbsEUMujksLhjr+3VzOglkRFjYdJQlaL5M+7LqCWRc2KxVkBUGlsqGZIvEsAtR3KNShmSFeUzhZMuTkE1QKVJEq36VMFrCtWQfVEJQugC9TRNQlEJmRQW6KSm6sFzw0DKkMBUH1Q1UZEkrRnSRzUc1CuGe82bZWBUlQ4gGqBqg4bq0HuChRQfVDfDLSrmzzZJAHVAlVZ6K5sDF0RW5qMgtoCdWVoqII5ecEiHhiB2hrlAjjdrH2T2EH1QakiQf0IXOM2GTqBeg7KLnSFZmw8LADVAuVuYhe84MHJQBNUH5R6kcFt3FQRm6JB9UOVC0YTvOpHEG/yQG2NSoZAyYC7srErT7FAbYVKXmi+OgxycFB9UW6Q7Rr1SRFRDnRQ26NmAe2KzDRJuxe6QD0PlS6QybXx4gmqJSpZKCt4mdBBtUIlCbnUrCgWs6B6oZLCoZq0XQMu6rqA2hK10gEKFChQp+MFI2T/v8xHGgoAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">《使用 webpack 定制前端开发环境》笔记</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-04-08</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=《使用 webpack 定制前端开发环境》笔记&url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=《使用 webpack 定制前端开发环境》笔记&url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/&title=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/04/08/2018-7-2-webpack-custom/&text=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB2UlEQVR42u3awY6DMAyEYd7/pbenlWiVzIwplRLzc9lVofAd3Di2Of4WPA5QoECBGqAOcfyfH117/uztxh/n0+eA6oUaBp24cfr5+T7Jc0D1Qs0C/PO8+s7oOvcdUM9DzR6uAl0tsqBAJf+rYAf1XFSSSGcPShL6rbsEUMujksLhjr+3VzOglkRFjYdJQlaL5M+7LqCWRc2KxVkBUGlsqGZIvEsAtR3KNShmSFeUzhZMuTkE1QKVJEq36VMFrCtWQfVEJQugC9TRNQlEJmRQW6KSm6sFzw0DKkMBUH1Q1UZEkrRnSRzUc1CuGe82bZWBUlQ4gGqBqg4bq0HuChRQfVDfDLSrmzzZJAHVAlVZ6K5sDF0RW5qMgtoCdWVoqII5ecEiHhiB2hrlAjjdrH2T2EH1QakiQf0IXOM2GTqBeg7KLnSFZmw8LADVAuVuYhe84MHJQBNUH5R6kcFt3FQRm6JB9UOVC0YTvOpHEG/yQG2NSoZAyYC7srErT7FAbYVKXmi+OgxycFB9UW6Q7Rr1SRFRDnRQ26NmAe2KzDRJuxe6QD0PlS6QybXx4gmqJSpZKCt4mdBBtUIlCbnUrCgWs6B6oZLCoZq0XQMu6rqA2hK10gEKFChQp+MFI2T/v8xHGgoAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                    
+                    <article id="post-content">
+                        <blockquote>
+<p>在线阅读：<a href="https://juejin.im/book/5a6abad5518825733c144469/section/5a6abad5518825732e2f8546" target="_blank" rel="noopener">使用 webpack 定制前端开发环境</a><br>书籍作者：<a href="https://juejin.im/user/57a2e06da3413100631c1fc7" target="_blank" rel="noopener">teabyii</a></p>
+</blockquote>
+<p>在阅读这本小册之前，博主其实已经在用 webpack 开发了，但是公司的 webpack 工作流是领导配置的，博主对其了解不多。阅读这本小册之后，对 webpack 配置的整个流程有了更清晰的认识。</p>
+<p>以下是阅读小册时有助于理解的笔记：</p>
+<ol>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2auGts2XnkRb2Vz7Kw0ldDAg" target="_blank" rel="noopener">配置参数 include 和 exclude</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2jAn-E3Wo4Vl2s4Lgl3nLo3f" target="_blank" rel="noopener">加载图片</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc1I-41F3fl4qP20RhDY1oyZC-" target="_blank" rel="noopener">webpack.config.js 的用法</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0pCTQJ0Uw45_20iZJK1JkLdL" target="_blank" rel="noopener">splitChunks 的 test 字段</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3bBrWJ0EQk1Y2phq1z0SeGMI" target="_blank" rel="noopener">optimization</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc1aXo-e0OmAZc2IVVp42JAY43" target="_blank" rel="noopener">loader 执行顺序</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0ASqmz2-n4GC2Q3ilF2kRVeM" target="_blank" rel="noopener">HMR 样式不应用更新的问题</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0pEGFH3XcQij2fCNx214S9Du" target="_blank" rel="noopener">devServer before</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0F9b1w19fkg92dYBsx1i0ES1" target="_blank" rel="noopener">DefinePlugin</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3Xm0wm1Vc4dR200uQK3n92rl" target="_blank" rel="noopener">webpack 配置一览</a></li>
+</ol>
+<p>附上阅读时练习的 webpack 配置：<a href="https://github.com/zhictory/zhDate/blob/master/webpack.config.js" target="_blank" rel="noopener">webpack.config.js</a></p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-04-08");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-04-08T07:19:04.314Z" itemprop="datePublished">2019-04-08</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/04/08/2018-7-30-markup-language/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">标记语言及语义化</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/04/08/2018-6-20-mysql-install/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">MySQL Community Server 8.0.11 安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Hexo</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.2 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

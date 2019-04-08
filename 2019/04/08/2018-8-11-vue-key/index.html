@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.2
+    -->
+    <script>
+window.lsVersion = "1.3.2",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>Vue.js 要点 | Hexo</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="关于 VueVue 是一套用于构建用户界面的渐进式框架。与其它大型框架不同...">
+
+<!-- Keywords -->
+<meta name="keywords" content>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/monokai.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hexo">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hexo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Vue.js 要点 | Hexo">
+<meta property="og:site_name" content="Hexo">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/04/08/2018-8-11-vue-key/">
+<meta property="og:image" content="http://yoursite.com/img/suka-favicon.ico">
+
+<meta property="og:description" content="关于 VueVue 是一套用于构建用户界面的渐进式框架。与其它大型框架不同...">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-04-08T07:19:04.316Z">
+    <meta property="article:modified_time" content="2019-04-08T07:19:04.316Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/04/08/2018-8-11-vue-key/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/04/08/2018-8-11-vue-key/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/04/08/2018-8-11-vue-key/"
+    },
+    "headline": "Vue.js 要点 | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-04-08T07:19:04.316Z",
+    "dateModified": "2019-04-08T07:19:04.317Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "关于 VueVue 是一套用于构建用户界面的渐进式框架。与其它大型框架不同..."
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about/" class="navbar-link">About</a>
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Vue.js 要点" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Vue.js 要点&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Vue.js 要点" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5klEQVR42u2aSY7DMAwE/f9PT65BIHa3hExg0qVLFgdUBaC4tHj93XBdQAEFFFALqEus9+efv1eflxuafYCaBVUZ+TRWgax+t3qu9gFqHlRldLVJ5ajLjRZ2KnigngHlgmS16eo9UEBV36vA+rPTB9TtoZIAmBRuJzaAmgflGodvvX61mwHqtlCx+GCKvMqR/1V1AeqWUGqzpAmtirmkOIwEDqBaQzmHTQW2pGBcJnCgxkAlq3Jq9yd2ml6gZkClSXbneRJYl0EYqBFQVfBUzeWOcO8E262EDFQLKGX8xKETUSM+fUC1hnIFmHVSI5458RaoOVBKiHdG0kCqDkHUIQPVCkqJEomzuz+UJGagZkEpIdU1oa6RUMk9Es2Aag/lRI1UBHMOHg8KAtUaygn4rkF1idyJcUDNg1IGkuYhaTzV8CFQs6ASsX5nuCZN8rLIA6o1VFrEqQDqgmWUqIEaBaWEMCdYqAFmJ7DFAzhAtYJy4kQSZJOLSzUcDdQcKLd2B+dPLzKBmgOVDjQn4uruYPTRUBdQLaCSBvKkcXWODtRsqLRwSz67Q1Q2sUA9Eiq5fHQOXTYUQD0CKrnM3h28OLqEBKodVCK8JkJ+Io4ANR8qESHSok8GR3eIgBoBdacFFFBAAfW2XkAQT342wWYBAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Vue.js 要点</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-04-08</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Vue.js 要点&url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Vue.js 要点&url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/08/2018-8-11-vue-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/&title=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/04/08/2018-8-11-vue-key/&text=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5klEQVR42u2aSY7DMAwE/f9PT65BIHa3hExg0qVLFgdUBaC4tHj93XBdQAEFFFALqEus9+efv1eflxuafYCaBVUZ+TRWgax+t3qu9gFqHlRldLVJ5ajLjRZ2KnigngHlgmS16eo9UEBV36vA+rPTB9TtoZIAmBRuJzaAmgflGodvvX61mwHqtlCx+GCKvMqR/1V1AeqWUGqzpAmtirmkOIwEDqBaQzmHTQW2pGBcJnCgxkAlq3Jq9yd2ml6gZkClSXbneRJYl0EYqBFQVfBUzeWOcO8E262EDFQLKGX8xKETUSM+fUC1hnIFmHVSI5458RaoOVBKiHdG0kCqDkHUIQPVCkqJEomzuz+UJGagZkEpIdU1oa6RUMk9Es2Aag/lRI1UBHMOHg8KAtUaygn4rkF1idyJcUDNg1IGkuYhaTzV8CFQs6ASsX5nuCZN8rLIA6o1VFrEqQDqgmWUqIEaBaWEMCdYqAFmJ7DFAzhAtYJy4kQSZJOLSzUcDdQcKLd2B+dPLzKBmgOVDjQn4uruYPTRUBdQLaCSBvKkcXWODtRsqLRwSz67Q1Q2sUA9Eiq5fHQOXTYUQD0CKrnM3h28OLqEBKodVCK8JkJ+Io4ANR8qESHSok8GR3eIgBoBdacFFFBAAfW2XkAQT342wWYBAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于-Vue"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于 Vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应式原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">响应式原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生命周期"><span class="post-toc-number">3.</span> <span class="post-toc-text">生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存"><span class="post-toc-number">4.</span> <span class="post-toc-text">缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算属性"><span class="post-toc-number">5.</span> <span class="post-toc-text">计算属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#data"><span class="post-toc-number">6.</span> <span class="post-toc-text">data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#侦听器"><span class="post-toc-number">7.</span> <span class="post-toc-text">侦听器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件渲染"><span class="post-toc-number">8.</span> <span class="post-toc-text">条件渲染</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#列表渲染"><span class="post-toc-number">9.</span> <span class="post-toc-text">列表渲染</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件处理"><span class="post-toc-number">10.</span> <span class="post-toc-text">事件处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表单输入绑定"><span class="post-toc-number">11.</span> <span class="post-toc-text">表单输入绑定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件"><span class="post-toc-number">12.</span> <span class="post-toc-text">组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异步更新队列"><span class="post-toc-number">13.</span> <span class="post-toc-text">异步更新队列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vue-router"><span class="post-toc-number">14.</span> <span class="post-toc-text">vue-router</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AJAX"><span class="post-toc-number">15.</span> <span class="post-toc-text">AJAX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习-Vue-的心得"><span class="post-toc-number">16.</span> <span class="post-toc-text">学习 Vue 的心得</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关"><span class="post-toc-number">17.</span> <span class="post-toc-text">相关</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="关于-Vue"><a href="#关于-Vue" class="headerlink" title="关于 Vue"></a>关于 Vue</h2><p>Vue 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。</p>
+<p>下面是渐进式（自底向上）的图示：</p>
+<p><img src="!--￼8--&gt;/img/vue-key/3.jpg" alt="渐进式框架"></p>
+<p>看看 Vue 作者的描述：</p>
+<blockquote>
+<p>Vue从设计角度来讲，虽然能够涵盖这张图上所有的东西，但是你并不需要一上手就把所有东西全用上，因为没有必要。无论从学习角度，还是实际情况，这都是可选的。声明式渲染和组建系统是Vue的核心库所包含内容，而客户端路由、状态管理、构建工具都有专门解决方案。这些解决方案相互独立，你可以在核心的基础上任意选用其他的部件，不一定要全部整合在一起。</p>
+</blockquote>
+<h2 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h2><ol>
+<li><p>在响应式原理中是如何追踪变化的呢？</p>
+<p> 原理是把一个对象传给 data 选项，Vue 将遍历此对象所有的属性，并使用 <code>Object.defineProperty</code> 把这些属性全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。</p>
+</li>
+<li><p>每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。</p>
+<p> 响应式原理的图示：</p>
+<p> <img src="!--￼9--&gt;/img/vue-key/1.png" alt="响应式原理"></p>
+</li>
+</ol>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>生命周期是指每个 Vue 实例在被创建时都要经过一系列的初始化过程。这个过程中会运行一些叫做生命周期钩子的函数，给用户在不同阶段添加自己的代码。</p>
+<p>下面是生命周期图示，其中红色字就是生命周期钩子：</p>
+<p><img src="!--￼10--&gt;/img/vue-key/2.png" alt="生命周期"></p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>我们为什么需要缓存？</p>
+<p>假设我们有一个性能开销比较大的的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter。如果你不希望有缓存，请用 methods 来替代。</p>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><ol>
+<li><p>模板内的表达式可以对 data 做额外操作，但是设计它的初衷是用于简单运算的，所以对于任何复杂逻辑，应当使用 computed。</p>
+<p> 除了 computed 还可以用一个 methods 实现复杂逻辑，两种方式的最终结果确实是完全相同的。不同的是 computed 是基于它们的依赖进行缓存的。</p>
+</li>
+<li><p>computed 取值操作时，getter 会被调用，运行赋值语句时，setter 会被调用。</p>
+</li>
+</ol>
+<h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><p>当一个组件（.vue）被定义，data 必须声明为返回一个函数，因为组件可能被用来创建多个实例。如果返回一个对象，则所有实例将共享同一个对象。</p>
+<h2 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h2><p>Vue 有个选项叫 watch，它和 computed 看起来很像，其实是有区别的。</p>
+<p>当需要在数据变化时执行异步或开销较大的操作时，watch 选项是最有用的。它允许我们执行异步操作，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性 computed 无法做到的。</p>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p>看个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个例子要注意：</p>
+<ol>
+<li>使用条件渲染多个元素时，可以将 v-if 放在不可见元素（如 template）</li>
+<li>v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面。</li>
+<li>添加一个具有唯一值的 key 属性，使得两个元素是完全独立的。</li>
+</ol>
+<p>除了 v-if，有时会看到用 v-show 判断，区别是 v-if 的开销比 v-show 大，所以：</p>
+<ol>
+<li>如果需要非常频繁地切换，使用 v-show 较好。</li>
+<li>如果在运行时条件很少改变，使用 v-if 较好。</li>
+</ol>
+<p>关于循环和判断的优先关系，当 v-for 和 v-if 处于同一节点，for 的优先级比 if 高，即循环判断。</p>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><ol>
+<li>列表渲染时加不加 key 看起来没有差别，不加 key 是高效的，不过只适用于不依赖子组件状态或临时 DOM 状态（？）的列表渲染。</li>
+<li><p>列表渲染一般是操作数组，关于操作数组时是否会触发视图更新的条件如下：</p>
+<p> 能改变原数组的就会触发视图更新：<code>push()</code>、<code>pop()</code>、<code>shift()</code>、<code>unshift()</code>、<code>splice()</code>、<code>sort()</code>、<code>reverse()</code></p>
+<p> 不能改变原数组的不会触发视图更新：<code>filter()</code>、<code>concat()</code>、<code>slice()</code></p>
+<p> 用索引赋值不会触发视图更新：<code>item[index] = newValue</code></p>
+<p> 用 set 赋值会触发视图更新：<code>vm.$set(item, index, newValue)</code> 或者 <code>Vue.set(item, index, newValue)</code></p>
+</li>
+<li><p>列表渲染时不能检测对象属性的添加或删除：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#list'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    obj: &#123;</span><br><span class="line">      a: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">vm.obj.b = <span class="number">4</span>; <span class="comment">// 不响应</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表渲染时不能动态添加根级别的响应式属性：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#list'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">vm.$<span class="keyword">set</span>(vm, 'b', 4); // 报错</span><br></pre></td></tr></table></figure>
+<p> 但是通过 set 可以给嵌套对象添加响应式属性：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#list'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    obj: &#123;</span><br><span class="line">      a: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">vm.$<span class="keyword">set</span>(vm.obj, 'b', 4);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在自定义组件使用列表渲染时，我们要用 props 把数据传给组件，而不是注入组件，因为组件有自己的作用域。使用 props 使得组件可以在其它场合利用，用法如下：</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span> <span class="attr">:title</span>=<span class="string">"todo.title"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 这里的 title 是在父组件中定义的，然后在注册组件时传入：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'todo-item'</span>, &#123;</span><br><span class="line">  template: <span class="string">`&#123;&#123; title &#125;&#125;`</span>,</span><br><span class="line">  props: [<span class="string">'title'</span>]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>在实际业务中，常常会使用 <code>event.preventDefault()</code> 或 <code>event.stopPropagation()</code>，但 Vue 建议方法中只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。可以使用事件修饰符来代替它们：<code>.stop</code>、<code>.prevent</code>。</p>
+<p>此外还有其它修饰符 <code>.capture</code>、<code>.self</code>、<code>.once</code>、<code>.passive</code>。</p>
+<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><ol>
+<li><p>Vue 用 v-model 来绑定表单输入，v-model 本质上不过是语法糖：</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"searchText"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 等价于：</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-bind:value</span>=<span class="string">"searchText"</span> <span class="attr">v-on:input</span>=<span class="string">"searchText = $event.target.value"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于单选按钮，复选框及选择框的选项，v-model 绑定的值通常是静态字符串 (对于复选框也可以是布尔值)。</p>
+</li>
+</ol>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>组件 (Component) 是 Vue.js 最强大的功能之一。</p>
+<p>组件是自定义元素，也可以表现为用 is 特性进行了扩展的原生 HTML 元素。</p>
+<p>关于组件的父子关系：</p>
+<ol>
+<li>组件设计初衷就是要配合使用的，最常见的就是形成父子组件的关系：组件 A 在它的模板中使用了组件 B。它们之间必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告知父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相对隔离的环境中书写和理解，从而提高了其可维护性和复用性。</li>
+<li>关于父子组件通信可以参考：<a href="https://www.cnblogs.com/daiwenru/p/6694530.html" target="_blank" rel="noopener">vue2.0 子组件和父组件之间的传值</a></li>
+<li>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译。</li>
+</ol>
+<p>关于 prop：</p>
+<ol>
+<li>父子组件的关系可以总结为 prop 向下传递，事件向上传递。</li>
+<li>prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是反过来不会。这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。</li>
+<li>prop 会在组件实例创建之前进行校验，所以在 default 或 validator 函数里，诸如 data、computed 或 methods 等实例属性还无法使用。</li>
+<li>所谓非 prop 特性，就是指它可以直接传入组件，而不需要定义相应的 prop。</li>
+<li>在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</li>
+</ol>
+<p>关于事件：</p>
+<p>自定义事件可以用来创建自定义的表单输入组件，使用 v-model 来进行数据双向绑定。</p>
+<h2 id="异步更新队列"><a href="#异步更新队列" class="headerlink" title="异步更新队列"></a>异步更新队列</h2><ol>
+<li>只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。</li>
+<li>Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel，如果执行环境不支持，会采用 <code>setTimeout(fn, 0)</code> 代替。</li>
+</ol>
+<h2 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h2><p>Vue Router 是路由管理器。</p>
+<ol>
+<li>导航守卫用来解决 URL 不合规范的问题</li>
+<li>Redirect 用来解决默认路由的问题</li>
+</ol>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p><a href="https://www.jianshu.com/p/3b5e453f54f5" target="_blank" rel="noopener">在 Vue 中如何使用 axios 跨域访问数据</a><br><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3uCdGK1iCQpP2cUmLO2VPR3W" target="_blank" rel="noopener">axios 请求问题</a></p>
+<h2 id="学习-Vue-的心得"><a href="#学习-Vue-的心得" class="headerlink" title="学习 Vue 的心得"></a>学习 Vue 的心得</h2><p>没使用过框架的人读文档可能会感觉吃力，看完文档再看看风格指南会更明白为什么要按某种格式写代码。</p>
+<h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><p><a href="http://www.infoq.com/cn/articles/vue-2-progressive-front-end-solution" target="_blank" rel="noopener">Vue 2.0——渐进式前端解决方案</a><br><a href="https://www.zhihu.com/question/51907207?rf=55052497" target="_blank" rel="noopener">Vue2.0 中，“渐进式框架”和“自底向上增量开发的设计”这两个概念是什么？</a></p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-04-08");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-04-08T07:19:04.316Z" itemprop="datePublished">2019-04-08</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/04/08/2018-8-20-es5-key/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">JavaScript 要点</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/04/08/2018-7-29-increase-exposure/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">提高网站曝光度</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Hexo</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.2 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

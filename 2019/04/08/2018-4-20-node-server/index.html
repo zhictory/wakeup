@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.2
+    -->
+    <script>
+window.lsVersion = "1.3.2",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>用 Node.js 搭建本地服务器 | Hexo</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="Github
+网友 ">
+
+<!-- Keywords -->
+<meta name="keywords" content>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/monokai.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hexo">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hexo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="用 Node.js 搭建本地服务器 | Hexo">
+<meta property="og:site_name" content="Hexo">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/04/08/2018-4-20-node-server/">
+<meta property="og:image" content="http://yoursite.com/img/suka-favicon.ico">
+
+<meta property="og:description" content="Github
+网友 ">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-04-08T07:19:04.311Z">
+    <meta property="article:modified_time" content="2019-04-08T07:19:04.311Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/04/08/2018-4-20-node-server/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/04/08/2018-4-20-node-server/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/04/08/2018-4-20-node-server/"
+    },
+    "headline": "用 Node.js 搭建本地服务器 | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-04-08T07:19:04.311Z",
+    "dateModified": "2019-04-08T07:19:04.311Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "Github
+网友 "
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about/" class="navbar-link">About</a>
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=用 Node.js 搭建本地服务器" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=用 Node.js 搭建本地服务器&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=用 Node.js 搭建本地服务器" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB3klEQVR42u3awY7DIAyE4bz/S2+v2QpmxjQHcP5cqm214YtEMLa5/ja8LlCgQIEaoC5x3X//98+3v0e/fX+XjAOqF2o46b5QCjr6Xj3I9AFBtUKNBh59zqDuRXDjgHoPSsHcoLOHBPVu1OymaZAtPTyoVii1ALoNndvYPb5LALU9yiUOT30+ms2A2hYVFR6CCe4m9ONVF1DbolRCkARat4i6xNWu6KCORCUbPbe5qyYNwwcA1QKliq2uAJYUXZcSB1DHo1yBKym2qsVTLaJ2lwDqONToxrObuIErgXo4Bqg2qARTbQipTWE00UG1QiWA6ougEgZQvVAuWCYbPTeZ3aYPVF9UkkCmTclKYAbVC+Um6vLBB/NiLB3qAnUEKr2JmrhJgE6CN6heqHQyJge40kaBLMSCOhqlkoZkgKTIoZreoHqhVHEjuVH1BYk3eaCORqlCfFSUX0g4St12UMejEvBqMynutoM6GpUczkonuzsAJgt0oFqg3JVO6qTJaAM7qBaoSkKgDnC5hqZLTkD1QiXNnl+bj+5ADqh+qJUDo8lLkQZjUO9CyWa0KWqoQq5NRkG1RKUJgAvA0UIMqhWq2pRMAnn5UA6oNqgkcXCBOFk4LRhUC9ROFyhQoEDdrg8QlBCve+q4nAAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">用 Node.js 搭建本地服务器</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-04-08</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=用 Node.js 搭建本地服务器&url=http://yoursite.com/2019/04/08/2018-4-20-node-server/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=用 Node.js 搭建本地服务器&url=http://yoursite.com/2019/04/08/2018-4-20-node-server/&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/08/2018-4-20-node-server/" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/04/08/2018-4-20-node-server/" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/04/08/2018-4-20-node-server/&title=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/04/08/2018-4-20-node-server/" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/04/08/2018-4-20-node-server/&text=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB3klEQVR42u3awY7DIAyE4bz/S2+v2QpmxjQHcP5cqm214YtEMLa5/ja8LlCgQIEaoC5x3X//98+3v0e/fX+XjAOqF2o46b5QCjr6Xj3I9AFBtUKNBh59zqDuRXDjgHoPSsHcoLOHBPVu1OymaZAtPTyoVii1ALoNndvYPb5LALU9yiUOT30+ms2A2hYVFR6CCe4m9ONVF1DbolRCkARat4i6xNWu6KCORCUbPbe5qyYNwwcA1QKliq2uAJYUXZcSB1DHo1yBKym2qsVTLaJ2lwDqONToxrObuIErgXo4Bqg2qARTbQipTWE00UG1QiWA6ougEgZQvVAuWCYbPTeZ3aYPVF9UkkCmTclKYAbVC+Um6vLBB/NiLB3qAnUEKr2JmrhJgE6CN6heqHQyJge40kaBLMSCOhqlkoZkgKTIoZreoHqhVHEjuVH1BYk3eaCORqlCfFSUX0g4St12UMejEvBqMynutoM6GpUczkonuzsAJgt0oFqg3JVO6qTJaAM7qBaoSkKgDnC5hqZLTkD1QiXNnl+bj+5ADqh+qJUDo8lLkQZjUO9CyWa0KWqoQq5NRkG1RKUJgAvA0UIMqhWq2pRMAnn5UA6oNqgkcXCBOFk4LRhUC9ROFyhQoEDdrg8QlBCve+q4nAAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                    
+                    <article id="post-content">
+                        <p><a href="https://github.com/zhictory/node-server" target="_blank" rel="noopener">Github</a></p>
+<p>网友 <a href="https://segmentfault.com/u/bottle1125" target="_blank" rel="noopener">bottle_</a> 提供搭建一个简单本地服务器的思路为下：</p>
+<blockquote>
+<ul>
+<li>我们需要一个 HTTP 服务器</li>
+<li>对于不同的请求，根据请求的 URL，我们的服务器需要给予不同的响应，因此我们需要一个路由，用于把请求对应到请求处理程序（request handler）</li>
+<li>当请求被服务器接收并通过路由传递之后，需要可以对其进行处理，因此我们需要最终的请求处理程序</li>
+<li>我们需要从 HTML 文件里提取数据以及展示服务器传入的数据，因此需要将 HTML 和服务器结合起来</li>
+</ul>
+</blockquote>
+<p>首先需要两个文件 index.js 和 index.html。</p>
+<ul>
+<li><p>index.js</p>
+<p>  引用模块</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); <span class="comment">// 系统文件及目录进行读写操作</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>); <span class="comment">// 封装了高效的 HTTP 服务器和 HTTP 客户端</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>); <span class="comment">// URL 处理</span></span><br></pre></td></tr></table></figure>
+<p>  路由</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 路由</span></span><br><span class="line"><span class="comment">* @param &#123;Function&#125; handle 请求处理程序</span></span><br><span class="line"><span class="comment">* @param &#123;String&#125; pathname 路径</span></span><br><span class="line"><span class="comment">* @param &#123;Object&#125; response 响应数据</span></span><br><span class="line"><span class="comment">* @param &#123;Object&#125; postData 请求参数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">route</span>(<span class="params">handle, pathname, response, postData</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> handle[pathname] === <span class="string">'function'</span>) &#123;</span><br><span class="line">    handle[pathname](response, postData);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    response.writeHead(<span class="number">404</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span> &#125;);</span><br><span class="line">    response.write(<span class="string">'404 Not Found'</span>);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  服务器</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 服务器</span></span><br><span class="line"><span class="comment">* @param &#123;Function&#125; route 路由</span></span><br><span class="line"><span class="comment">* @param &#123;Function&#125; handle 请求处理程序</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params">route, handle</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">onRequest</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> pathname = url.parse(request.url).pathname;</span><br><span class="line">    <span class="keyword">let</span> postData = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">switch</span> (request.method) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'GET'</span>:</span><br><span class="line">        postData += url.parse(request.url).query;</span><br><span class="line">        request.setEncoding(<span class="string">'utf8'</span>);</span><br><span class="line">        route(handle, pathname, response, postData);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'POST'</span>:</span><br><span class="line">        request.addListener(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">postDateChunk</span>) </span>&#123;</span><br><span class="line">          postData += postDateChunk;</span><br><span class="line">        &#125;);</span><br><span class="line">        request.addListener(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          route(handle, pathname, response, postData);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  http.createServer(onRequest).listen(<span class="number">8080</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Server has started'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  请求处理程序</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求处理程序</span></span><br><span class="line"><span class="keyword">const</span> handle = &#123;</span><br><span class="line">  <span class="comment">// index 接口</span></span><br><span class="line">  <span class="string">'/public/index.html'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">response, postData</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> pathname = __dirname + <span class="string">'/public/index.html'</span>;</span><br><span class="line">    fs.readFile(pathname, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      response.end(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// download 接口</span></span><br><span class="line">  <span class="string">'/download'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">response, postData</span>) </span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> &#125;);</span><br><span class="line">    response.write(<span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">      code: <span class="number">200</span>,</span><br><span class="line">      data: &#123;</span><br><span class="line">        <span class="string">'time'</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString(<span class="string">"en-US"</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;));</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// upload 接口</span></span><br><span class="line">  <span class="string">'/upload'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">response, postData</span>) </span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> &#125;);</span><br><span class="line">    response.write(<span class="string">'You have sent: '</span> + <span class="built_in">JSON</span>.parse(postData).value);</span><br><span class="line">    response.end();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>  启动服务器</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 启动服务器 = 路由处理 + 接口处理</span></span><br><span class="line">start(route, handle);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>index.html</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"input"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">value</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- submit demo --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span></span><br><span class="line"><span class="javascript">    btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> value = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).value;</span></span><br><span class="line"><span class="undefined">      ajax(value);</span></span><br><span class="line"><span class="javascript">    &#125;, <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">value</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> xmlhttp;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span></span><br><span class="line"><span class="javascript">        xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">        xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (xmlhttp.readyState === <span class="number">4</span> &amp;&amp; xmlhttp.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">document</span>.querySelector(<span class="string">'p'</span>).innerHTML = xmlhttp.responseText;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      xmlhttp.open(<span class="string">'POST'</span>, <span class="string">'/upload'</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">      xmlhttp.send(<span class="built_in">JSON</span>.stringify(&#123;</span></span><br><span class="line"><span class="undefined">        value: value</span></span><br><span class="line"><span class="undefined">      &#125;));</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="comment">// xmlhttp.open('GET', '/upload?value='+value, true);</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// xmlhttp.send();</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意事项：</p>
+<ul>
+<li><p>关于 GET 和 POST 方式的请求参数</p>
+<p>  GET 的请求参数是以查询参数形式放在 URL 后面的，服务器可以从 URL 上获取参数：<code>url.parse(request.url).query</code>。</p>
+<p>  POST 的请求参数则需要作为 <code>xhr.send()</code> 的参数并转换为字符串来传递，本文使用 <code>JSON.stringify()</code> 来转换，再在服务器端用 <code>JSON.parse()</code> 转换。</p>
+<p>  服务器端在响应两种请求方式时，响应数据格式参考<a href="https://nodejs.org/docs/latest-v6.x/api/http.html#http_response_write_chunk_encoding_callback" target="_blank" rel="noopener">官方文档</a>。</p>
+</li>
+<li><p>关于服务器响应头中的 Content-Type</p>
+<p>  一般网站的做法是：当返回 HTML 页面时为 text/html，当使用 JSONP 时为 text/javascript，当使用 CORS 时为 application/json。</p>
+</li>
+<li><p>关于跨域</p>
+<p>  如果希望某个接口可以跨域，需要设置响应头的 <code>Access-Control-Allow-Origin</code> 为 <code>*</code>，比如允许 download 接口跨域，代码修改如下：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.writeHead(200, &#123; 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*' &#125;);</span><br></pre></td></tr></table></figure>
+<p>  调试的话，只要启动两个不同端口的 index.js 即可，代码仓库里 server.1.js 和 server.2.js 就表示两个不同的 index.js。</p>
+</li>
+<li><p>关于 Node.js 热部署</p>
+<p>  Node.js 启动服务器时是将脚本放入内存，以后都会直接访问内存，避免重复载入。这种设计虽然有利于提高性能，却不利于开发调试，导致修改 Node.js 代码后需要手动终止进程并重启才会生效。</p>
+<p>  网友 <a href="http://www.cnblogs.com/benpaodexiaopangzi/" target="_blank" rel="noopener">会奔跑的胖子</a> 提出方案：  </p>
+<blockquote>
+<p>你只需要在修改文件后保存，它就能自动替你发布，这就是所谓的热部署。</p>
+</blockquote>
+<p>  supervisor 就是一个 Node.js 的开源热部署工具：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i supervisor -g</span><br><span class="line">supervisor server.js</span><br></pre></td></tr></table></figure>
+<p>  该网友中还提到另一个开源热部署工具 hotcode，但经测试 hotcode 若使用 express 4.x 则会报错，因为 hotcode 使用的 express.createServer() 已经被废弃。</p>
+</li>
+</ul>
+<p>参考：</p>
+<blockquote>
+<p><a href="https://segmentfault.com/a/1190000007617042" target="_blank" rel="noopener">学习笔记：用Nodejs搭建一个简单的本地服务器</a><br><a href="https://www.cnblogs.com/benpaodexiaopangzi/p/5856642.html" target="_blank" rel="noopener">NodeJS”热部署“代码，实现动态调试(hotnode，可以实现热更新)</a></p>
+</blockquote>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-04-08");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-04-08T07:19:04.311Z" itemprop="datePublished">2019-04-08</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/04/08/2018-6-17-git-practice/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Git 实践问答</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/04/08/2018-4-21-sublime-text/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Sublime Text 3 使用技巧</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Hexo</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.2 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>

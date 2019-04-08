@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html >
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.2
+    -->
+    <script>
+window.lsVersion = "1.3.2",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>JavaScript 要点 | Hexo</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="ECMAScript 是“伪语言”，而 JavaScript 是对 ECMAScript 的一个实现。
+JavaScript 有如下特点：
+
+函数优先：由于编译器的作用，函数声明和变量声明都...">
+
+<!-- Keywords -->
+<meta name="keywords" content>
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/monokai.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hexo">
+<meta name="msapplication-starturl" content="http://yoursite.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hexo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="JavaScript 要点 | Hexo">
+<meta property="og:site_name" content="Hexo">
+
+
+
+<meta property="og:url" content="http://yoursite.com/2019/04/08/2018-8-20-es5-key/">
+<meta property="og:image" content="http://yoursite.com/img/suka-favicon.ico">
+
+<meta property="og:description" content="ECMAScript 是“伪语言”，而 JavaScript 是对 ECMAScript 的一个实现。
+JavaScript 有如下特点：
+
+函数优先：由于编译器的作用，函数声明和变量声明都...">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-04-08T07:19:04.317Z">
+    <meta property="article:modified_time" content="2019-04-08T07:19:04.317Z">
+    <meta property="article:author" content="John Doe">
+    <meta property="og:article:tag" content> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/04/08/2018-8-20-es5-key/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/04/08/2018-8-20-es5-key/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/04/08/2018-8-20-es5-key/"
+    },
+    "headline": "JavaScript 要点 | Hexo",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-04-08T07:19:04.317Z",
+    "dateModified": "2019-04-08T07:19:04.317Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "ECMAScript 是“伪语言”，而 JavaScript 是对 ECMAScript 的一个实现。
+JavaScript 有如下特点：
+
+函数优先：由于编译器的作用，函数声明和变量声明都..."
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Hexo</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+        <a href="/about/" class="navbar-link">About</a>
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://yoursite.com&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=JavaScript 要点" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=JavaScript 要点&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=JavaScript 要点" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB1klEQVR42u3a0Y6CMBCFYd//pXdvdwkz569oQoefG41i+UxKac/09XPD4yVKlChRJ6hXc/z7weHz4/fHz45tkOuImoM67XTNBapzuvPRdUSNQlUduWusunDXTnfDiHoOqhzsive0PVGiEvKsk4t6Lqp6UKZBNGG+MksQdXtUN6H/5OvHVjOibo2KoUMxSHaDb7opLqcuom6NWnnQ0uCCdnRRz0B1HZ2A3/kjomahVjt7fKiCyWAZ5IoagyJh/TuhPVmMipqHqhqowvpukZoKSt0gLWoOigRmVQdN79MgGx/IokahKJAOjgkkag6qO7l7SKfQI00C0WJU1JaoLownF07AdBPEwVPUlqiViRzZkEMmgCjcF7U16spASgvXywGHqG1RXSiRBj4SrJFFiqhZqJVgPoVnJHBDAYeobVFkgw0pJNEi0dKuIFHbo1YaTxO/GJCRgEPU1qi0AEiFIAKOmwlFjUKhDTIXBlGy4UvUDFQ6VgqLdGGBCkaitkWRTTVd4YiEYySIEzULRQN5Gqyu/Ll24SBqaxTZkEwXGylEK38v6nEo8l1qU5SolYVptzglhXBRs1ArBUlaLEoBh6i5qKWHZpjckaCsLHqLGoG60yFKlChRf45feenQ4GzeI08AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">JavaScript 要点</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-04-08</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript 要点&url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=JavaScript 要点&url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/&via=John Doe" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/08/2018-8-20-es5-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/&title=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=Hexo&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/04/08/2018-8-20-es5-key/&text=Hexo" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB1klEQVR42u3a0Y6CMBCFYd//pXdvdwkz569oQoefG41i+UxKac/09XPD4yVKlChRJ6hXc/z7weHz4/fHz45tkOuImoM67XTNBapzuvPRdUSNQlUduWusunDXTnfDiHoOqhzsive0PVGiEvKsk4t6Lqp6UKZBNGG+MksQdXtUN6H/5OvHVjOibo2KoUMxSHaDb7opLqcuom6NWnnQ0uCCdnRRz0B1HZ2A3/kjomahVjt7fKiCyWAZ5IoagyJh/TuhPVmMipqHqhqowvpukZoKSt0gLWoOigRmVQdN79MgGx/IokahKJAOjgkkag6qO7l7SKfQI00C0WJU1JaoLownF07AdBPEwVPUlqiViRzZkEMmgCjcF7U16spASgvXywGHqG1RXSiRBj4SrJFFiqhZqJVgPoVnJHBDAYeobVFkgw0pJNEi0dKuIFHbo1YaTxO/GJCRgEPU1qi0AEiFIAKOmwlFjUKhDTIXBlGy4UvUDFQ6VgqLdGGBCkaitkWRTTVd4YiEYySIEzULRQN5Gqyu/Ll24SBqaxTZkEwXGylEK38v6nEo8l1qU5SolYVptzglhXBRs1ArBUlaLEoBh6i5qKWHZpjckaCsLHqLGoG60yFKlChRf45feenQ4GzeI08AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                    
+                    <article id="post-content">
+                        <p>ECMAScript 是“伪语言”，而 JavaScript 是对 ECMAScript 的一个实现。</p>
+<p>JavaScript 有如下特点：</p>
+<ol>
+<li>函数优先：由于编译器的作用，函数声明和变量声明都会被提升，但函数会首先被提升，然后才是变量。</li>
+<li>轻量级解释型或即时编译型：即 JavaScript 不能被机器直接执行，需要解释或编译为机器语言。</li>
+<li>可应用于浏览器或非浏览器环境，后者包括 Node.js、 Apache CouchDB 和 Adobe Acrobat。</li>
+<li>基于原型编程：在原型编程中，类不是实时的，而且行为重用是通过复制已经存在的原型对象的过程实现的。</li>
+<li>多范式：支持面向对象、命令式和函数式。</li>
+<li>动态脚本语言：新的函数可以被引进，已有的函数可以被删除，类型在运行时检查。</li>
+</ol>
+<p>接下来说说 JavaScript 的要点，以下是从红宝书总结而来的：</p>
+<ol>
+<li>在 HTML 中使用 JavaScript：当初开发 JavaScript 的时候，有一个重要问题就是如何做到让 JavaScript 既能与 HTML 页面共存，又不影响那些页面在其他浏览器中的呈现效果。最终的决定是为 Web 增加统一的脚本支持。</li>
+<li>基本概念：​​​​​任何语言的核心都必然会描述这门语言最基本的工作原理。而描述的内容通常都要涉及这门语言的语法、操作符、数据类型、内置功能等用于构建复杂解决方案的基本概念。</li>
+<li>变量、作用域和内存问题：​​​​​JavaScript 变量松散类型的本质，决定了它只是在特定时间用于保存特定值的一个名字而已。由于不存在定义某个变量必须要保存何种数据类型值的规则，变量的值及其数据类型可以在脚本的生命周期内改变。​​​​​</li>
+<li>引用类型：​​​​​在 ECMAScript 中，引用类型是一种数据结构，用于将数据和功能组织在一起。它也常被称为类，但这种称呼并不妥当。尽管 ECMAScript 从技术上讲是一门面向对象的语言，但它不具备传统的面向对象语言所支持的类和接口等基本结构。引用类型有时候也被称为对象定义，因为它们描述的是一类对象所具有的属性和方法。</li>
+<li>面向对象的程序设计：​​​​​面向对象（Object-Oriented，OO）的语言有一个标志，那就是它们都有类的概念。ECMAScript 中没有类的概念，因此它的对象也与基于类的语言中的对象有所不同。我们可以把 ECMAScript 的对象想象成散列表：无非就是一组名值对，其中值可以是数据或函数。</li>
+<li>函数表达式：​​​​​函数表达式是 JavaScript 中的一个既强大又容易令人困惑的特性。定义函数的方式有两种：一种是函数声明，另一种就是函数表达式。​​​​​</li>
+<li>BOM：​​​​​ECMAScript 是 JavaScript 的核心，但如果要在 Web 中使用 JavaScript，那么 BOM（浏览器对象模型）则无疑才是真正的核心。BOM 提供了很多对象，用于访问浏览器的功能，这些功能与任何网页内容无关。​​​​​</li>
+<li>客户端检测：​​​​​即使是那些跨平台的浏览器，虽然从技术上看版本相同，也照样存在不一致性问题。检测 Web 客户端的手段很多，而且各有利弊。但最重要的还是要知道，不到万不得已，就不要使用客户端检测。只要能找到更通用的方法，就应该优先采用更通用的方法。​​​​​</li>
+<li>DOM：​​​​​DOM（文档对象模型）是针对 HTML 和 XML 文档的一个 API（应用程序编程接口）。DOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。​​​​​DOM 1 级主要定义的是 HTML 和 XML 文档的底层结构。​​​​​</li>
+<li>DOM 扩展：​​​​​对 DOM 的两个主要的扩展是 Selectors API（选择符API）和 HTML5。此外，还有一个不那么引人瞩目的 Element Traversal（元素遍历）规范，为 DOM 添加了一些属性。​​​​​</li>
+<li>DOM 2 和 DOM 3：​​​​​DOM 2 和 DOM 3 级比 DOM 1 级引入了更多的交互能力，也支持了更高级的XML特性，分为许多模块（模块之间具有某种关联），分别描述了DOM的某个非常具体的子集，包括 DOM 2 的核心、视图、事件、样式、遍历和范围、HTML 和 DOM 3 的 XPath 和加载与保存。​​​​​</li>
+<li>事件：​​​​​JavaScript 与 HTML 之间的交互是通过事件实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。这种在传统软件工程中被称为观察员模式的模型。事件最早是作为分担服务器运算负载的一种手段。浏览器对象模型（BOM）也支持一些事件，这些事件与文档对象模型（DOM）事件之间的关系并不十分清晰，因为BOM事件长期没有规范可以遵循。</li>
+<li>表单脚本：​​​​​JavaScript 最初的一个应用，就是分担服务器处理表单的责任，打破处处依赖服务器的局面。尽管目前的 Web 和 JavaScript 已经有了长足的发展，但 Web 表单的变化并不明显。由于 Web 表单没有为许多常见任务提供现成的解决手段，很多开发人员不仅会在验证表单时使用 JavaScirpt，而且还增强了一些标准表单控件的默认行为。​​​​​</li>
+<li>使用 Canvas 绘图：​​​​​这个元素负责在页面中设定一个区域，然后就可以通过 JavaScript 动态地在这个区域中绘制图形。与浏览器环境中的其他组件类似，canvas 由几组API构成，但并非所有浏览器都支持所有这些API。​​​​​</li>
+<li>HTML 5 脚本编程：​​​​​本书前面讨论过，HTML 5 规范定义了很多新 HTML 标记。为了配合这些标记的变化，HTML5 规范也用显著篇幅定义了很多 JavaScript API。定义这些 API 的用意就是简化此前实现起来困难重重的任务，最终简化创建动态 Web 界面的工作。​​​​​</li>
+<li>错误处理与调试：​​​​​脚本出错时，浏览器通常会给出类似于 “object expected”（缺少对象）这样的消息，没有上下文信息，让人摸不着头脑。ECMAScript 第 3 版致力于解决这个问题，专门引入了 try-catch 和 throw 语句以及一些错误类型，意在让开发人员能够适当地处理错误。</li>
+<li>JavaScript 与 XML：​​​​​曾几何时，XML 一度成为存储和通过因特网传输结构化数据的标准。DOM 规范的制定，不仅是为了方便在 Web 浏览器中使用 XML，也是为了在桌面及服务器应用程序中处理 XML 数据。此前，由于浏览器无法解析 XML 数据，很多开发人员都要动手编写自己的 XML 解析器。而自从DOM出现后，所有浏览器都内置了对 XML 的原生支持（XML DOM），同时也提供了一系列相关的技术支持。</li>
+<li>E4X（ECMAScript for XML）：为处理 XML 定义了新的语法，也定义了特定于 XML 的对象。<a href="https://developer.mozilla.org/zh-CN/docs/Archive/Web/E4X" target="_blank" rel="noopener">已废弃</a></li>
+<li>JSON（JavaScript Object Notation）：曾经有一段时间，XML是互联网上传输结构化数据的事实标准。然而不少人认为 XML 过于烦琐、冗长。JSON 是在 JavaScript 中读写结构化数据的更好的方式。关于 JSON，最重要的是要理解它是一种数据格式，不是一种编程语言。JSON 并不从属于 JavaScript。不是只有 JavaScript 才使用 JSON，很多编程语言都有针对 JSON 的解析器和序列化器。​​​​​</li>
+<li>Ajax（Asynchronous JavaScript and XML）：这一技术能够向服务器请求额外的数据而无须卸载页面，会带来更好的用户体验。Ajax 技术的核心是 XMLHttpRequest （XHR）对象，XHR 为向服务器发送请求和解析服务器响应提供了流畅的接口。Ajax 通信与数据格式无关，从服务器取得的数据不一定是 XML 数据。</li>
+<li>高级技巧：JavaScript 是一种极其灵活的语言，除了过程方式和面向对象方式，还有更为复杂和有趣的模式。包括高级函数、防篡改对象、高级定时器、自定义事件和拖放。</li>
+<li>离线应用与客户端存储：所谓离线 Web 应用，就是在设备不能上网的情况下仍然可以运行的应用。​​​​​开发离线 Web 应用需要几个步骤。首先是确保应用知道设备是否能上网，以便下一步执行正确的操作。然后，应用还必须能访问一定的资源（图像、JavaScript、CSS等），只有这样才能正常工作。最后，必须有一块本地空间用于保存数据，无论能否上网都不妨碍读写。</li>
+<li>最佳实践：Web 开发从过去还都凑合的现象演化成了完整的研究规范。规范包括可维护性、性能和部署。</li>
+<li>新兴的 API：包括 requestAnimationFrame、Page Visibility API、Geolocation API、File API、Web 计时、Web Workers。这些 API 没有包含在 HTML 5 中，但是属于 HTML 5 相关的 API。</li>
+</ol>
+<p>另外博主还做了关于这本书的一些知识笔记，这些笔记是博主大概两年前阅读红宝书时整理的，基本都是思维导图，一直放在个人笔记里。现在将它们整理放到博客里，便于分享：</p>
+<ol>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0F5-oA3prAG12lsN1F0uzPDx" target="_blank" rel="noopener">基本概念</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2rYI8337JQGP2aJGXp0ZfUiM" target="_blank" rel="noopener">变量和作用域</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2N3xmI31SAcR2CJ_D22-JDpJ" target="_blank" rel="noopener">传递参数</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2zcKx92104mx2YOJNl0UN_Z4" target="_blank" rel="noopener">JSON</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2R_a4Z3fG4CO2Dke3G1lyr7p" target="_blank" rel="noopener">引用类型之 String 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc35UW6R2j-4qG2LRx_B0ZOart" target="_blank" rel="noopener">引用类型之 RegExp 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3gWgi220QAaK24LDpu1Ev5ns" target="_blank" rel="noopener">引用类型之 Object 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2xgyG10VEk4h2JBoNY36q0dR" target="_blank" rel="noopener">引用类型之 Number 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0PtmwG3dxQOk280b5f0_hg7h" target="_blank" rel="noopener">引用类型之 Math 对象</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2rAkSo3zzA_U2cAYpa0saI0J" target="_blank" rel="noopener">引用类型之 Date 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2kPk073bTAcH2lN2dJ3Jx7tu" target="_blank" rel="noopener">引用类型之 Array 类型</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2NysFo2cV4EY2ZNXrz3KV5HO" target="_blank" rel="noopener">DOM</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0w80fX0BfQR_2j2bER3YO5Nr" target="_blank" rel="noopener">DOM 扩展</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3jKBIP0PRkiu2oLmwY0A8pIS" target="_blank" rel="noopener">DOM2 和 DOM3</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc2bb_vY15xkzG2tJYSV2jyUs9" target="_blank" rel="noopener">BOM</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc0wWwEB1mJkOj2UvFz-1sc9DB" target="_blank" rel="noopener">事件</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc3s9_Yo0jD4yC2CmNaJ30GXWp" target="_blank" rel="noopener">高级定时器</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc278NOC1XY4YF2u1JxQ0MznPf" target="_blank" rel="noopener">数据存储</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc1bv0jp1bsA0b2L87ZY3YtV7l" target="_blank" rel="noopener">创建对象</a></li>
+<li><a href="http://d8480a24.wiz03.com/share/s/3oi0EA1grx7x2Lj00z1ZXVvc1amtJP3dcQ_Q21vZGu3F795-" target="_blank" rel="noopener">继承</a></li>
+</ol>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-04-08");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-04-08T07:19:04.317Z" itemprop="datePublished">2019-04-08</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/04/08/2018-8-6-app-download/">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">App 下载提示</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/04/08/2018-8-11-vue-key/">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Vue.js 要点</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="http://yoursite.com">Hexo</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.2 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
